@@ -28,3 +28,39 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
    ```bash
    git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/JoseGavilan1/saas-facturacion.git)
    cd TU_REPOSITORIO
+
+2. **Instalar dependencias de PHP y Node.js**
+    ```bash
+    composer install
+    npm install
+
+3. **Configurar el entorno**
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+
+4. **Configurar Base de Datos y Mailtrap**
+    ```bash
+    MAIL_MAILER=smtp
+    MAIL_HOST=sandbox.smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=tu_usuario
+    MAIL_PASSWORD=tu_password
+
+5. **Ejecutar Migraciones**
+    ```bash
+    php artisan migrate
+
+6. **Levantar los servidores**
+    Necesitarás dos terminales para correr el backend y el motor de Vite simultáneamente:
+    ```bash
+    # Terminal 1
+    php artisan serve
+
+    # Terminal 2
+    npm run dev
+
+👨‍💻 Autor
+José Gavilán Desarrollador Fullstack
+
+Nota: Recuerda revisar la carpeta /resources/js/Pages para explorar la arquitectura de componentes de Vue y el uso de Inertia.js.
